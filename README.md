@@ -67,6 +67,8 @@ the APK with the Android debug key so it can be installed for testing; use your 
 release keystore before redistributing it. The release is generated from the same
 Gradle 8.13 / JDK 17 build used by CI.
 
+**Current tested build (temporary CI download):** [Download the `velocity-oneui-apk` archive](https://github.com/VexelDevv/oneui-velocity/actions/runs/45885220012/artifacts/15147589669). Extract `app-release.apk` from the archive. This artifact is available until **December 10, 2026**.
+
 **CI build artifact:** open [Actions → Build APK](https://github.com/VexelDevv/oneui-velocity/actions/workflows/android.yml)
 and download `velocity-oneui-apk` from a successful run. Workflow artifacts are temporary;
 use the GitHub Release link above for the stable download.
