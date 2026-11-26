@@ -18,6 +18,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import dev.velocity.oneui.catalog.HookCatalog
+import dev.velocity.oneui.catalog.HookInfo
 import dev.velocity.oneui.catalog.Verification
 import dev.velocity.oneui.core.Process
 import dev.velocity.oneui.ui.SectionCard
@@ -38,7 +39,7 @@ fun OptimizationsScreen(state: UiState) {
 }
 
 @Composable
-private fun HookCard(state: UiState, hook: HookCatalog.HookInfo) {
+private fun HookCard(state: UiState, hook: HookInfo) {
     SectionCard(title = hook.title) {
         Row(
             modifier = Modifier.fillMaxWidth(),
