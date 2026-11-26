@@ -35,7 +35,7 @@ class NoOpExplicitGcHook : Hook(
     description = "No-ops advisory System.gc()/Runtime.gc() calls inside SystemUI and Samsung Home.",
     processes = setOf(Process.SYSTEM_UI, Process.LAUNCHER),
 ) {
-    override fun install(context: HookContext): List<XposedBridge.Unhook> {
+    override fun install(context: HookContext): List<XC_MethodHook.Unhook> {
         val interceptor = object : XC_MethodHook() {
             override fun beforeHookedMethod(param: MethodHookParam) {
                 // Skipping an advisory call never changes program semantics.
@@ -43,7 +43,7 @@ class NoOpExplicitGcHook : Hook(
             }
         }
 
-        val unhooks = mutableListOf<XposedBridge.Unhook>()
+        val unhooks = mutableListOf<XC_MethodHook.Unhook>()
         var failures = 0
 
         try {

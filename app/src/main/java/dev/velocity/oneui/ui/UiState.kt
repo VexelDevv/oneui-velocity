@@ -76,7 +76,8 @@ class UiState(context: Context) {
         evictCompletedDiagnostics()
     }
 
-    fun setProfile(newProfile: Profile) {
+    /** Select a profile and immediately refresh the observable UI state. */
+    fun selectProfile(newProfile: Profile) {
         store.setProfile(newProfile)
         refresh()
     }

@@ -36,7 +36,7 @@ class SystemUILogSuppressionHook : Hook(
 ) {
     private val keepLevels = setOf("WARNING", "WARN", "ERROR", "WTF", "FATAL")
 
-    override fun install(context: HookContext): List<XposedBridge.Unhook> {
+    override fun install(context: HookContext): List<XC_MethodHook.Unhook> {
         val bufferClass = XposedHelpers.findClassIfExists(
             "com.android.systemui.log.core.LogBuffer",
             context.classLoader,

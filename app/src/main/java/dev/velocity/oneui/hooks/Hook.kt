@@ -1,6 +1,6 @@
 package dev.velocity.oneui.hooks
 
-import de.robv.android.xposed.XposedBridge
+import de.robv.android.xposed.XC_MethodHook
 import dev.velocity.oneui.core.HookContext
 import dev.velocity.oneui.core.Process
 
@@ -32,7 +32,7 @@ abstract class Hook(
     val processes: Set<Process>,
 ) {
     /** Processes this hook applies to; checked before install. */
-    abstract fun install(context: HookContext): List<XposedBridge.Unhook>
+    abstract fun install(context: HookContext): List<XC_MethodHook.Unhook>
 
     open fun isAvailable(context: HookContext): Boolean = true
 }
