@@ -106,7 +106,7 @@ private fun ProfileSection(state: UiState) {
                         else Color.Transparent,
                         shape = RoundedCornerShape(20.dp),
                     )
-                    .clickable { state.setProfile(profile) },
+                    .clickable { state.selectProfile(profile) },
                 colors = CardDefaults.cardColors(
                     containerColor = if (selected) MaterialTheme.colorScheme.primaryContainer
                     else MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.5f),
