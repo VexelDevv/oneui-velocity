@@ -35,10 +35,43 @@ jobs:
       - name: Build release APK
         run: gradle :app:assembleRelease --no-daemon --stacktrace
 
-      - name: Upload APK
+      - name: Upload APK artifact
         uses: actions/upload-artifact@v7
         with:
           name: velocity-oneui-apk
           path: app/build/outputs/apk/release/app-release.apk
           if-no-files-found: error
           retention-days: 14
+
+  publish:
+    name: Publish GitHub Release
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Download built APK
+        uses: actions/download-artifact@v8
+        with:
+          name: velocity-oneui-apk
+          path: release
+
+      - name: Publish v1.0.0 release
+        uses: softprops/action-gh-release@v3
+        with:
+          tag_name: v1.0.0
+          name: Velocity for One UI v1.0.0
+          target_commitish: ${{ github.sha }}
+          body: |
+            First packaged release of Velocity for One UI 8.
+
+            - Targets Samsung One UI 8 / Android 16 (API 36).
+            - CI-built release APK, debug-signed for convenient installation.
+            - Requires a compatible rooted device with Zygisk and LSPosed.
+            - Read the README and docs/INSTALL.md before installing.
+          files: release/app-release.apk
+          fail_on_unmatched_files: true
+          overwrite_files: true
+          make_latest: true
