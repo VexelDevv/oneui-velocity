@@ -1,7 +1,7 @@
 package dev.velocity.oneui.config
 
-import android.content.ContentObserver
 import android.content.Context
+import android.database.ContentObserver
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
