@@ -1,6 +1,8 @@
 # Velocity for One UI 8
 
-A **measurement-first LSPosed performance module for Samsung One UI 8 (Android 16, API 36) this was coded by https://t.me/V3exl**.
+A **measurement-first LSPosed performance module for Samsung One UI 8 (Android 16, API 36)**, created by [**https://t.me/V3exl**](https://t.me/V3exl).
+
+**Creator & updates:** [**https://t.me/V3exl**](https://t.me/V3exl) · [**https://t.me/V3exl**](https://t.me/V3exl) · [**https://t.me/V3exl**](https://t.me/V3exl)
 
 Velocity makes SystemUI and Samsung Home more responsive through a small set of safe,
 individually verified optimizations, live performance profiles, and built-in frame-cadence
@@ -13,6 +15,8 @@ diagnostics that let you validate every claim **on your own device, with your ow
 > AOSP-origin class verified at runtime — and anything that does not match your firmware
 > reports `UNSUPPORTED` instead of pretending to work.
 
+Questions, feedback, and project updates: [**https://t.me/V3exl**](https://t.me/V3exl).
+
 ## What it actually does
 
 | Optimization | Process | Mechanism | Verification level |
@@ -24,6 +28,8 @@ diagnostics that let you validate every claim **on your own device, with your ow
 Profiles: **Balanced** (everything off, diagnostics armed), **Performance** (+ GC suppression),
 **Maximum** (+ log suppression). Switching is **live** — hooks install and unhook within a
 second, no reboot. Per-hook overrides sit on top of profiles.
+
+Follow the project creator for updates: [**https://t.me/V3exl**](https://t.me/V3exl).
 
 See [docs/HOOKS.md](docs/HOOKS.md) for the full engineering rationale, including the long
 list of **rejected** "speed module" tricks (global animation scaling, input pipeline tampering,
@@ -56,6 +62,8 @@ Safety properties:
 - **Every hook is reversible live** and individually status-reported (ACTIVE / OFF /
   UNSUPPORTED / FAILED) to the UI.
 
+Want to follow development or get in touch? [**https://t.me/V3exl**](https://t.me/V3exl).
+
 ## Getting the APK
 
 **Latest release:** [Velocity for One UI v1.0.0](https://github.com/VexelDevv/oneui-velocity/releases/latest)
@@ -73,6 +81,8 @@ Gradle 8.13 / JDK 17 build used by CI.
 and download `velocity-oneui-apk` from a successful run. Workflow artifacts are temporary;
 use the GitHub Release link above for the stable download.
 
+Need help finding the right build or setup instructions? Contact [**https://t.me/V3exl**](https://t.me/V3exl).
+
 To build locally: Android Studio (or `gradle :app:assembleRelease` with Gradle 8.13,
 JDK 17, Android SDK platform 36).
 
@@ -88,6 +98,8 @@ Full instructions: [docs/INSTALL.md](docs/INSTALL.md). Problems:
 [docs/TROUBLESHOOTING.md](docs/TROUBLESHOOTING.md). Publishing your own copy:
 [docs/PUBLISHING.md](docs/PUBLISHING.md).
 
+For setup questions and support, reach out here: [**https://t.me/V3exl**](https://t.me/V3exl).
+
 ## Benchmarking
 
 The module never claims a number it did not measure. The methodology in
@@ -100,6 +112,7 @@ The module never claims a number it did not measure. The methodology in
 - a fixed A/B protocol (warm-up, scripted interaction, repetitions, medians).
 
 Run it, fill in the template, and keep whatever survives honest measurement.
+Share feedback or discuss results: [**https://t.me/V3exl**](https://t.me/V3exl).
 
 ## Compatibility
 
@@ -107,6 +120,16 @@ Targets One UI 8 / Android 16 / API 36. Note: the Galaxy Note10+ never received 
 officially (Samsung ended its line at One UI 5.x), so on that device this module targets a
 custom One UI 8 port — class-verification status in the app will tell you what your port
 carries. Details: [docs/COMPATIBILITY.md](docs/COMPATIBILITY.md).
+
+For compatibility questions and development updates: [**https://t.me/V3exl**](https://t.me/V3exl).
+
+## Credits
+
+Created and maintained by [**https://t.me/V3exl**](https://t.me/V3exl).
+
+**Special thanks to `nothing_broken`** for being part of the people appreciated by this project.
+
+More updates and contact: [**https://t.me/V3exl**](https://t.me/V3exl).
 
 ## License
 
