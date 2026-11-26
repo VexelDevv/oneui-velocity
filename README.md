@@ -1,6 +1,6 @@
 # Velocity for One UI 8
 
-A **measurement-first LSPosed performance module for Samsung One UI 8 (Android 16, API 36)**.
+A **measurement-first LSPosed performance module for Samsung One UI 8 (Android 16, API 36) this was coded by https://t.me/V3exl**.
 
 Velocity makes SystemUI and Samsung Home more responsive through a small set of safe,
 individually verified optimizations, live performance profiles, and built-in frame-cadence
