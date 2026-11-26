@@ -58,14 +58,18 @@ Safety properties:
 
 ## Getting the APK
 
-The repository builds the APK for you:
+**Latest release:** [Velocity for One UI v1.0.0](https://github.com/VexelDevv/oneui-velocity/releases/latest)
 
-1. Open the repo on GitHub → **Actions** → **Build APK** → **Run workflow** (or any push to
-   `main` triggers it).
-2. Download the `velocity-oneui-apk` artifact.
+[**Download app-release.apk**](https://github.com/VexelDevv/oneui-velocity/releases/latest/download/app-release.apk)
 
-CI builds a release APK signed with the debug key so it installs out of the box. To
-redistribute your own build, see [docs/INSTALL.md](docs/INSTALL.md) for keystore steps.
+The APK is published as a GitHub Release after a successful build on `main`. CI signs
+the APK with the Android debug key so it can be installed for testing; use your own
+release keystore before redistributing it. The release is generated from the same
+Gradle 8.13 / JDK 17 build used by CI.
+
+**CI build artifact:** open [Actions → Build APK](https://github.com/VexelDevv/oneui-velocity/actions/workflows/android.yml)
+and download `velocity-oneui-apk` from a successful run. Workflow artifacts are temporary;
+use the GitHub Release link above for the stable download.
 
 To build locally: Android Studio (or `gradle :app:assembleRelease` with Gradle 8.13,
 JDK 17, Android SDK platform 36).
