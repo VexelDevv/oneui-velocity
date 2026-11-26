@@ -1,7 +1,7 @@
 package dev.velocity.oneui.hooks
 
+import android.app.AndroidAppHelper
 import android.content.Context
-import de.robv.android.xposed.AndroidAppHelper
 import dev.velocity.oneui.config.ConfigClient
 import dev.velocity.oneui.config.ConfigData
 import dev.velocity.oneui.core.HookContext
