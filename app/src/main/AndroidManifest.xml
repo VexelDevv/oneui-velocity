@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <application
+        android:label="@string/app_name"
+        android:icon="@mipmap/ic_launcher"
+        android:theme="@style/Theme.Velocity"
+        android:allowBackup="false"
+        android:supportsRtl="true">
+
+        <activity
+            android:name="dev.velocity.oneui.ui.MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!--
+            Cross-process configuration bridge.
+            Target processes (SystemUI / Samsung Home) read configuration and push
+            hook-status / benchmark reports through this provider. Callers are
+            filtered by UID->package allowlist (see ConfigProvider).
+        -->
+        <provider
+            android:name="dev.velocity.oneui.config.ConfigProvider"
+            android:authorities="dev.velocity.oneui.config"
+            android:exported="true"
+            android:syncable="false" />
+
+        <!-- LSPosed (legacy Xposed API) module metadata -->
+        <meta-data
+            android:name="xposedmodule"
+            android:value="true" />
+        <meta-data
+            android:name="xposeddescription"
+            android:value="@string/xposed_description" />
+        <meta-data
+            android:name="xposedminversion"
+            android:value="82" />
+    </application>
+
+</manifest>

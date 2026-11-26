@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Velocity for One UI</string>
+    <string name="xposed_description">Measurement-first performance module for Samsung One UI 8 (Android 16). Safe, individually verified hooks for SystemUI and Samsung Home, live performance profiles, and built-in frame-cadence diagnostics.</string>
+</resources>
