@@ -10,17 +10,15 @@ import android.os.Binder
 import android.os.Bundle
 import android.os.Process
 import dev.velocity.oneui.core.BuildConstants
-import dev.velocity.oneui.profiles.Profile
 
 /**
  * Exported configuration bridge.
  *
- * Access policy: same-uid calls (the module's own UI) always allowed;
- * external callers must resolve to one of the target packages. UID->package
+ * Access policy: same-uid calls (the module's own UI) are allowed;
+ * external callers must resolve to one of the target packages. UID-to-package
  * resolution goes through PackageManager against the Binder identity, which
- * cannot be spoofed by an ordinary app. No configuration values are secret
- * (a local performance profile), but we still do not let arbitrary apps
- * flip them.
+ * cannot be spoofed by an ordinary app. Configuration is not secret, but the
+ * provider still restricts access to the module and its intended targets.
  *
  * The provider performs no long-running work, owns no services, and is only
  * instantiated on demand.
@@ -83,8 +81,14 @@ class ConfigProvider : ContentProvider() {
         selection: String?,
         selectionArgs: Array<out String>?,
         sortOrder: String?,
-    ): Cursor = MatrixCursor(arrayOf("payload")).apply {
-        addRow(arrayOf<Any>(store.load().toJson()))
+    ): Cursor {
+        val ctx = context ?: throw IllegalStateException("Provider context is unavailable")
+        if (!isAllowed(ctx)) {
+            throw SecurityException("Caller is not allowed to query Velocity configuration")
+        }
+        return MatrixCursor(arrayOf("payload")).apply {
+            addRow(arrayOf<Any>(store.load().toJson()))
+        }
     }
 
     override fun getType(uri: Uri): String = "vnd.android.cursor.dir/config"
@@ -103,9 +107,6 @@ class ConfigProvider : ContentProvider() {
     private fun isAllowed(ctx: Context): Boolean {
         val callingUid = Binder.getCallingUid()
         if (callingUid == Process.myUid()) return true
-        // External callers must resolve to one of the module's target packages.
-        // UID->package resolution uses the Binder identity, which ordinary apps
-        // cannot spoof.
         val packages = ctx.packageManager.getPackagesForUid(callingUid) ?: return false
         return packages.any { it in ALLOWED_EXTERNAL_PACKAGES }
     }
