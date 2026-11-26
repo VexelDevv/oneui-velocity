@@ -1,6 +1,6 @@
 package dev.velocity.oneui.profiles
 
-import de.robv.android.xposed.XposedBridge
+import de.robv.android.xposed.XC_MethodHook
 import dev.velocity.oneui.config.ConfigData
 import dev.velocity.oneui.core.HookContext
 import dev.velocity.oneui.diagnostics.DiagLog
@@ -16,7 +16,7 @@ import dev.velocity.oneui.hooks.UnsupportedHookException
  * makes profile switching live (no reboot).
  */
 object ProfileManager {
-    private val applied = HashMap<String, List<XposedBridge.Unhook>>()
+    private val applied = HashMap<String, List<XC_MethodHook.Unhook>>()
 
     @Synchronized
     fun apply(context: HookContext, config: ConfigData, hooks: List<Hook>) {
