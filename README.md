@@ -127,7 +127,7 @@ For compatibility questions and development updates: [**https://t.me/V3exl**](ht
 
 Created and maintained by [**https://t.me/V3exl**](https://t.me/V3exl).
 
-**Special thanks to `nothing_broken`** for being part of the people appreciated by this project.
+**Special thanks to `nothing_broken`!**
 
 More updates and contact: [**https://t.me/V3exl**](https://t.me/V3exl).
 
